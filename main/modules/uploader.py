@@ -92,7 +92,13 @@ async def upload_video(msg: Message,file,id,tit,name,ttl,sourcetext,untext,subti
             gofuk_text = goresponse.text.strip()
             file_er_id = str(x.message_id)
             share_link = f"https://t.me/somayukibot?start=animxt_{str_to_b64(file_er_id)}"
-            encodetext =  f"{sourcetext}" + "\n" + "━━━━━━━━━━━━〄━━━━━━━━━━━━" + "\n" + "**#Encoded_File**" + "\n" + f"**🗂️File Name**: `{filed}`" + "\n" + "**🎥Video**: `720p HEVC x265 10Bit`" + "\n" + "**🔊Audio**: `Japanese`" + "\n" + f"**📝Subtitle**: `{subtitle}`" + "\n" + f"**💾File Size**: `{size}`" + "\n" + f"**⌛Duration**: {durationx}" + "\n" + f"**📥Downloads**: [🐌Telegram File]({share_link}) [🚀Gofile]({gofuk_text})" + "\n" + "━━━━━━━━━━━━〄━━━━━━━━━━━━" + "\n" + "**@animxt**"
+            frn_url = f"https://flashlink.in/api?api=aafa2d36a38398631679a74769a071b2154e08e7&url={share_link}&format=text"
+            tfinal = requests.get(frn_url)
+            m_url = tfinal.text
+            of_url = f"{da_url}shorten"
+            naniu = requests.get(of_url, params={"url": m_url})
+            gouk_text = naniu.text.strip()
+            encodetext =  f"{sourcetext}" + "\n" + "━━━━━━━━━━━━〄━━━━━━━━━━━━" + "\n" + "**#Encoded_File**" + "\n" + f"**🗂️File Name**: `{filed}`" + "\n" + "**🎥Video**: `720p HEVC x265 10Bit`" + "\n" + "**🔊Audio**: `Japanese`" + "\n" + f"**📝Subtitle**: `{subtitle}`" + "\n" + f"**💾File Size**: `{size}`" + "\n" + f"**⌛Duration**: {durationx}" + "\n" + f"**📥Downloads**: [🐌Telegram File]({gouk_text}) [🚀Gofile]({gofuk_text})" + "\n" + "━━━━━━━━━━━━〄━━━━━━━━━━━━" + "\n" + "**@animxt**"
             await asyncio.sleep(5)
             entext = await untext.edit(encodetext)
     except Exception:
