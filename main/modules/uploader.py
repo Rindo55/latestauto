@@ -63,7 +63,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl,sourcetext,untext,subti
             caption = f"{filed}"
             caption = caption.replace("[720p x265] @animxt.mkv", "") 
             gcaption=f"**{caption}**" + "\n" +  f"__({tit})__" + "\n" + "━━━━━━━━━━━━━━━━━━━" + "\n" + "✓  `720p x265 10Bit`" + "\n" + f"✓  `{subtitle} ~ Subs`" + "\n" + "#Encoded #HEVC"
-            kayo_id = -1001903052236
+            kayo_id = -1001543171178
             x = await app.send_document(
 
                 kayo_id,
@@ -114,9 +114,9 @@ async def upload_video(msg: Message,file,id,tit,name,ttl,sourcetext,untext,subti
 @app.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
-    kay_id = -1001903052236
+    kay_id = -1001543171178
     if usr_cmd == "/start":
-       await cmd.reply_text("Yo baka!")
+       await cmd.reply_text("⚡ **Bot Is up...**")
     else:
         try:
             try:
