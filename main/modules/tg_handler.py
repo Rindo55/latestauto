@@ -114,9 +114,10 @@ async def start_uploading(data):
 
         KAYO_ID = -1001159872623
         DATABASE_ID = -1001543171178
+        WASTE_ID = -1001884130912
         name = name.replace(f" @animxt.","").replace(ext,"").strip()
         id, img, tit = await get_anime_img(get_anime_name(title))
-        msg = await app.send_photo(KAYO_ID,photo=img,caption=title)
+        msg = await app.send_photo(WASTE_ID,photo=img,caption=title)
         img, caption = await get_anilist_data(title)
 
         print("Downloading --> ",name)
