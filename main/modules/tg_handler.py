@@ -124,8 +124,7 @@ async def start_uploading(data):
 
         await status.edit(await status_text(f"Downloading {name}"),reply_markup=button1)
 
-        file = await downloader(msg,link,title)
-
+        file = await downloader(msg,link,size,title)
         await msg.edit(f"Download Complete : {name}")
         print("Encoding --> ",name)
 
