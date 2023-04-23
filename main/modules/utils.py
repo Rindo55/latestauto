@@ -182,7 +182,7 @@ async def status_text(text):
     )
 
 
-def get_progress_text(sourcetext,status,completed,size,speed,total,enco=False):
+def get_progress_text(sourcetext,status,completed,speed,total,enco=False):
     text = """Name: {}
 {}: {}%
 [{}]
